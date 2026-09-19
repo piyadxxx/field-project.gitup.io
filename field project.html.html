@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Data Privacy Awareness Among College Students</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#07050b;
+    color:#f7efff;
+    line-height:1.7;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:999;
+    background:rgba(7,5,11,.96);
+    border-bottom:1px solid #54217a;
+    padding:14px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:800;
+    color:#c77dff;
+}
+
+.logo span{
+    color:#fff;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+.nav-links a{
+    color:#eee;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+}
+
+.nav-links a:hover{
+    color:#c77dff;
+}
+
+.menu{
+    display:none;
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* GENERAL SECTION */
+section{
+    padding:95px 7%;
+    scroll-margin-top:65px;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:150px 8% 90px;
+
+    background:
+    radial-gradient(
+        circle at 80% 25%,
+        rgba(145,55,230,.35),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 15% 80%,
+        rgba(86,29,140,.3),
+        transparent 28%
+    ),
+
+    #07050b;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 14px;
+    border:1px solid #8744b8;
+    border-radius:30px;
+    background:#170c22;
+    color:#d8a6ff;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(40px,6vw,72px);
+    line-height:1.08;
+    margin-bottom:20px;
+}
+
+.gradient{
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #cf8cff,
+        #8b5cf6
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    font-size:19px;
+    color:#cfc4d6;
+    max-width:800px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:28px;
+    padding:13px 23px;
+    background:#873fc1;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#a855d5;
+}
+
+/* TITLES */
+.section-title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-sub{
+    text-align:center;
+    color:#bdb1c8;
+    max-width:820px;
+    margin:0 auto 42px;
+}
+
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:linear-gradient(
+        145deg,
+        #160c20,
+        #0d0912
+    );
+
+    border:1px solid #3d2055;
+    border-radius:17px;
+    padding:25px;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#9b59d0;
+}
+
+.card h3{
+    color:#d59cff;
+    margin-bottom:9px;
+}
+
+.card p,
+.card li{
+    color:#c9bfce;
+}
+
+.card ul{
+    padding-left:20px;
+}
+
+/* HIGHLIGHT BOX */
+.highlight{
+    max-width:1000px;
+    margin:auto;
+    background:#100916;
+    border:1px solid #63328a;
+    border-radius:20px;
+    padding:32px;
+}
+
+.highlight strong{
+    color:#d69aff;
+}
+
+/* STEPS */
+.steps{
+    counter-reset:step;
+}
+
+.step{
+    position:relative;
+    padding:20px 20px 20px 65px;
+    margin:15px 0;
+    background:#100a16;
+    border:1px solid #34203f;
+    border-radius:13px;
+}
+
+.step:before{
+    counter-increment:step;
+    content:counter(step);
+
+    position:absolute;
+    left:20px;
+    top:18px;
+
+    width:30px;
+    height:30px;
+
+    border-radius:50%;
+    background:#8b3fc3;
+
+    text-align:center;
+    line-height:30px;
+
+    font-weight:bold;
+}
+
+/* TABLE */
+.table-wrap{
+    overflow-x:auto;
+}
+
+.table{
+    width:100%;
+    border-collapse:collapse;
+    background:#100a15;
+}
+
+.table th,
+.table td{
+    border:1px solid #3d2550;
+    padding:13px;
+    text-align:left;
+}
+
+.table th{
+    color:#dda5ff;
+    background:#1a0e25;
+}
+
+/* SURVEY */
+.question{
+    margin-bottom:18px;
+}
+
+.question label{
+    display:block;
+    margin-bottom:7px;
+    font-weight:700;
+}
+
+select{
+    width:100%;
+    padding:12px;
+
+    background:#0b0710;
+    color:white;
+
+    border:1px solid #593274;
+    border-radius:8px;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:17px;
+}
+
+.stat{
+    text-align:center;
+    background:#110a16;
+    border:1px solid #3b2050;
+    border-radius:15px;
+    padding:22px;
+}
+
+.stat b{
+    display:block;
+    font-size:31px;
+    color:#c77dff;
+    margin-bottom:5px;
+}
+
+/* CONCLUSION */
+.conclusion{
+    max-width:1050px;
+    margin:auto;
+
+    background:linear-gradient(
+        135deg,
+        #21102f,
+        #0c0810
+    );
+
+    border:1px solid #773da3;
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+}
+
+.conclusion h3{
+    font-size:32px;
+    color:#d9a0ff;
+    margin-bottom:16px;
+}
+
+.quote{
+    text-align:center;
+    margin-top:25px;
+    font-size:20px;
+    color:#e0b8ff;
+    font-weight:700;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:32px 7%;
+    border-top:1px solid #351b47;
+    color:#978c9f;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+        top:62px;
+        left:0;
+        right:0;
+
+        background:#0a0710;
+
+        flex-direction:column;
+
+        padding:20px 7%;
+        gap:14px;
+
+        border-bottom:1px solid #54217a;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .grid,
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVIGATION MENU -->
+
+<nav>
+
+<div class="logo">
+Privacy<span>Pulse</span>
+</div>
+
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#introduction">Introduction</a>
+</li>
+
+<li>
+<a href="#objectives">Objectives</a>
+</li>
+
+<li>
+<a href="#importance">Importance</a>
+</li>
+
+<li>
+<a href="#platforms">Platforms</a>
+</li>
+
+<li>
+<a href="#risks">Privacy Risks</a>
+</li>
+
+<li>
+<a href="#safety">Safety Tips</a>
+</li>
+
+<li>
+<a href="#survey">Survey</a>
+</li>
+
+<li>
+<a href="#findings">Findings</a>
+</li>
+
+<li>
+<a href="#conclusion">Conclusion</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="badge">
+College Student Research Project • 2026
+</div>
+
+<h1>
+
+Survey on
+
+<span class="gradient">
+Data Privacy Awareness
+</span>
+
+Among College Students
+
+</h1>
+
+<p>
+
+Understanding how students protect personal information,
+use privacy settings and stay safe across social media platforms.
+
+</p>
+
+<a class="btn" href="#introduction">
+Start Exploring ↓
+</a>
+
+</div>
+
+</section>
+
+
+<!-- INTRODUCTION -->
+
+<section id="introduction">
+
+<h2 class="section-title">
+Introduction
+</h2>
+
+<p class="section-sub">
+
+Social media has become an important part of student life,
+making data privacy awareness more important than ever.
+
+</p>
+
+<div class="highlight">
+
+<p>
+
+College students regularly share photographs, opinions,
+locations, messages and personal details online.
+
+Social-media platforms can provide communication,
+education and entertainment, but careless sharing may
+expose users to privacy and security risks.
+
+</p>
+
+<p style="margin-top:15px">
+
+This project focuses on the level of
+
+<strong>
+data privacy awareness among college students
+</strong>
+
+and examines their everyday habits related to passwords,
+privacy settings, permissions, suspicious links,
+location sharing and personal information.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- OBJECTIVES -->
+
+<section id="objectives">
+
+<h2 class="section-title">
+Objectives of the Study
+</h2>
+
+<p class="section-sub">
+
+The project aims to understand awareness and encourage
+safer digital habits.
+
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>01. Measure Awareness</h3>
+<p>
+Understand how much students know about data privacy
+and online security.
+</p>
+</div>
+
+<div class="card">
+<h3>02. Study Habits</h3>
+<p>
+Examine how students manage privacy settings,
+passwords and personal information.
+</p>
+</div>
+
+<div class="card">
+<h3>03. Identify Risks</h3>
+<p>
+Identify common privacy concerns such as phishing,
+oversharing and unsafe permissions.
+</p>
+</div>
+
+<div class="card">
+<h3>04. Compare Platforms</h3>
+<p>
+Explore privacy awareness across commonly used
+social-media platforms.
+</p>
+</div>
+
+<div class="card">
+<h3>05. Promote Awareness</h3>
+<p>
+Provide simple recommendations that students can
+follow in daily digital life.
+</p>
+</div>
+
+<div class="card">
+<h3>06. Encourage Responsibility</h3>
+<p>
+Encourage students to think before sharing
+information online.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- IMPORTANCE -->
+
+<section id="importance">
+
+<h2 class="section-title">
+Why Data Privacy Is Important
+</h2>
+
+<p class="section-sub">
+
+Privacy protects more than passwords—it helps protect
+a person's digital identity and control over information.
+
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🔐 Personal Information</h3>
+
+<p>
+Names, phone numbers, email addresses, photographs
+and locations should be shared carefully.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🪪 Digital Identity</h3>
+
+<p>
+Online profiles can represent a person's identity.
+Protecting account access helps prevent misuse.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>📍 Location Privacy</h3>
+
+<p>
+Location information can reveal where someone lives,
+studies, works or spends time.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🔑 Account Protection</h3>
+
+<p>
+Strong passwords and multi-factor authentication
+add important layers of protection.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>📱 App Permissions</h3>
+
+<p>
+Users should understand what information an app
+requests before granting access.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🧠 Digital Awareness</h3>
+
+<p>
+Knowing common online risks helps students make
+safer and more informed choices.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PLATFORMS -->
+
+<section id="platforms">
+
+<h2 class="section-title">
+Social Media Platforms Covered
+</h2>
+
+<p class="section-sub">
+
+The survey can consider privacy practices on different
+platforms because each service has different features
+and settings.
+
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Instagram</h3>
+
+<p>
+Profile visibility, stories, direct messages, tags,
+location and account security.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>WhatsApp</h3>
+
+<p>
+Profile visibility, group privacy, account security,
+links and information sharing.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Facebook</h3>
+
+<p>
+Audience controls, personal information, app permissions
+and account security.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Snapchat</h3>
+
+<p>
+Location sharing, contacts, stories and privacy controls.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>YouTube</h3>
+
+<p>
+Public activity, comments, subscriptions, account security
+and sharing behaviour.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Other Platforms</h3>
+
+<p>
+Students may also use messaging, short-video,
+professional or emerging social platforms.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RISKS -->
+
+<section id="risks">
+
+<h2 class="section-title">
+Common Data Privacy Risks
+</h2>
+
+<p class="section-sub">
+
+Awareness of common risks can help students avoid
+unnecessary exposure of personal information.
+
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Phishing & Scams</h3>
+
+<p>
+Fake messages or links may try to trick users into
+revealing passwords or other information.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Oversharing</h3>
+
+<p>
+Posting too much personal information can make it
+easier for unknown people to learn about you.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Weak Passwords</h3>
+
+<p>
+Simple or reused passwords can make multiple accounts
+more vulnerable if one password is exposed.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Unsafe Permissions</h3>
+
+<p>
+Apps may request access to information or device
+features that users do not need to provide.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Public Profiles</h3>
+
+<p>
+Public posts can reach a much wider audience than
+expected and may remain available online.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Unknown Accounts</h3>
+
+<p>
+Accepting requests or messages from unknown people
+can create privacy and safety concerns.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SAFETY TIPS -->
+
+<section id="safety">
+
+<h2 class="section-title">
+How Students Can Protect Their Privacy
+</h2>
+
+<p class="section-sub">
+
+Small habits can make a meaningful difference in
+everyday social-media use.
+
+</p>
+
+<div class="steps">
+
+<div class="step">
+
+<b>Use strong, unique passwords.</b>
+
+<br>
+
+Do not reuse the same password for every important account.
+
+</div>
+
+
+<div class="step">
+
+<b>Turn on multi-factor authentication.</b>
+
+<br>
+
+Use an additional verification step when the platform
+provides it.
+
+</div>
+
+
+<div class="step">
+
+<b>Review privacy settings.</b>
+
+<br>
+
+Check profile visibility, tagging, messaging and
+audience controls regularly.
+
+</div>
+
+
+<div class="step">
+
+<b>Think before posting.</b>
+
+<br>
+
+Ask yourself whether the information really needs to be public.
+
+</div>
+
+
+<div class="step">
+
+<b>Check links carefully.</b>
+
+<br>
+
+Avoid suspicious links and verify unexpected requests
+before responding.
+
+</div>
+
+
+<div class="step">
+
+<b>Review app permissions.</b>
+
+<br>
+
+Give access only when it is necessary and appropriate.
+
+</div>
+
+
+<div class="step">
+
+<b>Be careful with location sharing.</b>
+
+<br>
+
+Understand who can see location-related information.
+
+</div>
+
+
+<div class="step">
+
+<b>Keep software updated.</b>
+
+<br>
+
+Updates can include important security and privacy improvements.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SURVEY -->
+
+<section id="survey">
+
+<h2 class="section-title">
+Student Survey Questionnaire
+</h2>
+
+<p class="section-sub">
+
+Sample questions for collecting responses from college students.
+
+</p>
+
+<div class="card" style="max-width:900px;margin:auto">
+
+
+<div class="question">
+
+<label>
+1. How often do you check your social-media privacy settings?
+</label>
+
+<select>
+
+<option>Select</option>
+<option>Regularly</option>
+<option>Sometimes</option>
+<option>Rarely</option>
+<option>Never</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+2. Do you use a different password for important accounts?
+</label>
+
+<select>
+
+<option>Select</option>
+<option>Yes</option>
+<option>Sometimes</option>
+<option>No</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+3. Do you use multi-factor authentication?
+</label>
+
+<select>
+
+<option>Select</option>
+<option>Yes</option>
+<option>No</option>
+<option>Not sure</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+4. Do you read app permissions before accepting them?
+</label>
+
+<select>
+
+<option>Select</option>
+<option>Always</option>
+<option>Sometimes</option>
+<option>Never</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+5. How aware are you of phishing or suspicious links?
+</label>
+
+<select>
+
+<option>Select</option>
+<option>Very aware</option>
+<option>Somewhat aware</option>
+<option>Not aware</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+6. Do you avoid posting sensitive personal information publicly?
+</label>
+
+<select>
+
+<option>Select</option>
+<option>Yes</option>
+<option>Sometimes</option>
+<option>No</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+7. Do you review who can see your posts and stories?
+</label>
+
+<select>
+
+<option>Select</option>
+<option>Regularly</option>
+<option>Sometimes</option>
+<option>Never</option>
+
+</select>
+
+</div>
+
+
+<div class="question">
+
+<label>
+8. Do you understand why social-media platforms collect user data?
+</label>
+
+<select>
+
+<option>Select</option>
+<option>Yes</option>
+<option>Partly</option>
+<option>No</option>
+
+</select>
+
+</div>
+
+
+<button class="btn" onclick="submitSurvey()">
+Submit Sample Response
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FINDINGS -->
+
+<section id="findings">
+
+<h2 class="section-title">
+Key Findings & Discussion
+</h2>
+
+<p class="section-sub">
+
+The project can use collected responses to identify
+patterns in student privacy awareness.
+
+</p>
+
+
+<div class="stats">
+
+<div class="stat">
+
+<b>01</b>
+
+Privacy settings should be checked regularly.
+
+</div>
+
+
+<div class="stat">
+
+<b>02</b>
+
+Strong passwords and MFA improve account security.
+
+</div>
+
+
+<div class="stat">
+
+<b>03</b>
+
+Students should recognize suspicious links and requests.
+
+</div>
+
+
+<div class="stat">
+
+<b>04</b>
+
+Careful sharing reduces unnecessary privacy exposure.
+
+</div>
+
+</div>
+
+
+<div class="table-wrap" style="margin-top:30px">
+
+<table class="table">
+
+<tr>
+
+<th>Area</th>
+<th>What to Observe</th>
+<th>Recommended Action</th>
+
+</tr>
+
+
+<tr>
+
+<td>Passwords</td>
+
+<td>
+Unique or reused passwords
+</td>
+
+<td>
+Use strong, unique passwords
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Privacy Settings</td>
+
+<td>
+Frequency of privacy reviews
+</td>
+
+<td>
+Review settings regularly
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Permissions</td>
+
+<td>
+Whether permissions are checked
+</td>
+
+<td>
+Allow only necessary access
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Phishing</td>
+
+<td>
+Ability to identify suspicious links
+</td>
+
+<td>
+Verify before clicking
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>Sharing</td>
+
+<td>
+Amount of personal information posted
+</td>
+
+<td>
+Think before sharing
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- CONCLUSION -->
+
+<section id="conclusion">
+
+<div class="conclusion">
+
+<h3>
+Conclusion
+</h3>
+
+<p>
+
+Data privacy has become an important part of modern
+student life. College students use social-media platforms
+for communication, education, entertainment and
+self-expression, but every online activity can involve
+some form of personal information. Therefore, understanding
+how information is shared, stored and protected is essential.
+
+</p>
+
+
+<p style="margin-top:17px">
+
+This survey highlights the need to improve awareness about
+
+<b>
+privacy settings, strong passwords, multi-factor
+authentication, app permissions, location sharing,
+phishing and responsible posting
+</b>.
+
+Being active on social media should not mean giving up
+control over personal information.
+
+</p>
+
+
+<p style="margin-top:17px">
+
+The most effective approach is to build simple privacy
+habits into everyday digital behaviour. Students should
+regularly review their account settings, limit unnecessary
+information sharing, verify suspicious messages and links,
+and understand the permissions they provide to applications.
+
+Colleges can also support this effort by organizing
+awareness programs, workshops and digital-safety campaigns.
+
+</p>
+
+
+<p style="margin-top:17px">
+
+Ultimately,
+
+<b>
+data privacy is not only a technical responsibility;
+it is a personal responsibility shared by every digital user.
+</b>
+
+A privacy-aware student is better prepared to use technology
+confidently, responsibly and safely.
+
+</p>
+
+
+<p class="quote">
+
+“Be aware. Think before you share.
+Protect your digital identity.”
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<b>Data Privacy Awareness Survey</b>
+</p>
+
+<p>
+College Student Research Website • Purple & Black Theme
+</p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("show");
+
+}
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(a){
+
+    a.addEventListener("click",function(){
+
+        document
+        .getElementById("navLinks")
+        .classList
+        .remove("show");
+
+    });
+
+});
+
+
+function submitSurvey(){
+
+    alert(
+        "Thank you! This is a demonstration survey for the project website."
+    );
+
+}
+
+</script>
+
+</body>
+</html>
